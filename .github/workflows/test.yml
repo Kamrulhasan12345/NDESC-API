@@ -38,6 +38,7 @@ jobs:
       - name: Test
         run: |
           yarn install --frozen-lockfile
+          echo $PRIVATE_KEY
           yarn run test
         env:
           DATABASE_URL: ${{ secrets.DATABASE_URL }}
