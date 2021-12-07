@@ -235,7 +235,7 @@ router.get("/un/:username", async (req, res) => {
 		const username = req.params.username;
 		const user = await DBHandler.users.fetchUser(username);
 		if (user.code == 404) {
-			return await res.status(404).json({ ...user, message: messages[404] });
+			return await res.status(404).json({ ...user, message: messages[404][0] });
 		} else if (user.code == 500) {
 			return await res.status(500).json({
 				...user,
@@ -261,7 +261,7 @@ router.get("/sk/:sessionkey", async (req, res) => {
 		const sessionkey = req.params.sessionkey;
 		const user = await DBHandler.users.fetchUser(undefined, sessionkey);
 		if (user.code == 404) {
-			return await res.status(404).json({ ...user, message: messages[404] });
+			return await res.status(404).json({ ...user, message: messages[404][0] });
 		} else if (user.code == 500) {
 			return await res.status(500).json({
 				...user,

@@ -492,7 +492,7 @@ describe("GET /users/un/:username", (it) => {
 		UserOnce.resolves(invalidData);
 		await fetch("/un/auser").expect(404, {
 			code: 404,
-			message: messages[404],
+			message: messages[404][0],
 		});
 	});
 
@@ -539,7 +539,7 @@ describe("GET /users/sk/:sessionkey", (it) => {
 		UserOnce.resolves(invalidRefData);
 		await fetch("/sk/akey").expect(404, {
 			code: 404,
-			message: messages[404],
+			message: messages[404][0],
 		});
 	});
 
