@@ -7,8 +7,9 @@
 	"scripts": {
 		"start": "",
 		"dev": "node -r dotenv/config --experimental-loader ts-node/esm --experimental-specifier-resolution=node src/server.ts",
-		"test": "c8 --include=src tsm -r dotenv/config node_modules/uvu/bin.js tests/unit",
-		"test:debug": "tsm -r dotenv/config node_modules/uvu/bin.js tests/unit",
+		"test:rt": "tsm -r dotenv/config node_modules/uvu/bin.js tests/realtime",
+		"test": "c8 --include=src tsm -r dotenv/config node_modules/uvu/bin.js tests/integration",
+		"test:debug": "tsm -r dotenv/config node_modules/uvu/bin.js tests/integration",
 		"lint": "eslint . --ext .ts"
 	},
 	"repository": "https://github.com/Kamrulhasan12345/NDESC.git",
