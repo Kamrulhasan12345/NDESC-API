@@ -171,9 +171,8 @@ export const invalidPostDataS = {
 	},
 } as unknown as DataSnapshot;
 
-export const editedPostData: Post = {
+export const editedPostData = {
 	title: "Lorem Ipsum dolor",
-	author: "mohammadkh",
 	datetime: "12345678",
 	feature_img: "lorem-8615i23u.png",
 	content: "#Lorem Ipsum sit dolor\nHere is the body.",

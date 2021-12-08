@@ -90,7 +90,9 @@ router.post("/login", async (req, res) => {
 		}
 
 		/* c8 ignore start */
-		return await res.status(200).json(userLogged);
+		return await res
+			.status(200)
+			.json({ code: 200, sessionkey: userLogged.sessionkey });
 	} catch (e) {
 		await handleE(e, "ERR LO15 (in POST /users/login)");
 		return await res.status(500).json({
@@ -218,7 +220,7 @@ router.delete("/delete", async (req, res) => {
 		}
 
 		/* c8 ignore start */
-		return await res.status(200).json(userDeleted);
+		return await res.status(200).json({ code: 200, message: messages[200][2] });
 	} catch (e) {
 		await handleE(e, "ERR DE16 (in DELETE /users/delete)");
 		return await res.status(500).json({
@@ -244,7 +246,7 @@ router.get("/un/:username", async (req, res) => {
 			});
 		}
 		/* c8 ignore start */
-		return await res.status(200).json(user);
+		return await res.status(200).json({ code: 200, user: user.user });
 	} catch (e) {
 		await handleE(e, "ERR UN12 (in GET /users/un/:username)");
 		return await res.status(500).json({
@@ -270,7 +272,7 @@ router.get("/sk/:sessionkey", async (req, res) => {
 			});
 		}
 		/* c8 ignore start */
-		return await res.status(200).json(user);
+		return await res.status(200).json({ code: 200, user: user.user });
 	} catch (e) {
 		await handleE(e, "ERR SK13 (in GET /users/sk/:sessionkey)");
 		return await res.status(500).json({

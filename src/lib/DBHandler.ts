@@ -114,6 +114,10 @@ export default class DBHandler {
 						(k) => user[k] === undefined && delete user[k]
 					);
 
+					if (user.password) {
+						user.password = await bcrypt.hash(user.password, global.saltR);
+					}
+
 					await users.child(username).update(user);
 					return { code: 200 };
 				} else {
@@ -284,6 +288,9 @@ export default class DBHandler {
 				if (!postExists) {
 					return { code: 404 };
 				}
+				Object.keys(postData).forEach(
+					(k) => postData[k] === undefined && delete postData[k]
+				);
 				await posts.child(slug).update(postData);
 				return { code: 200 };
 			} catch (e) {

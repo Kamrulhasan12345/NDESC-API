@@ -405,7 +405,7 @@ describe("DELETE /users/delete", (it) => {
 				username: aUser.user.username,
 				password: rawPass,
 			}),
-		}).expect(200, { code: 200 });
+		}).expect(200, { code: 200, message: messages[200][2] });
 	});
 
 	it("is returning code 400 on not providing enough informations", async () => {

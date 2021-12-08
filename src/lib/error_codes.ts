@@ -34,6 +34,9 @@ export default {
 			posts: {
 				GP19_33: "GET /posts",
 				CP20_21: "POST /posts",
+				FP21_25: "GET /posts/:slug",
+				EP22_25: "PATCH /posts/:slug",
+				DP23_25: "DELETE /posts/:slug",
 			},
 		},
 	},

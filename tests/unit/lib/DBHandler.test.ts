@@ -794,7 +794,7 @@ describe("Function: posts.editPost", (it) => {
 		);
 	});
 
-	it("is returning code 404 if post doesn't exist", async () => {
+	it("is returning code 404 if post wasn't found", async () => {
 		PostOnce.resolves(invalidPostDataS);
 
 		const postEdited = await DBHandler.posts.editPost("invalidPost", {});
@@ -846,7 +846,7 @@ describe("Function: posts.deletePost", (it) => {
 		);
 	});
 
-	it("is returning code 404 if post doesn't exist", async () => {
+	it("is returning code 404 if post wasn't found", async () => {
 		PostOnce.resolves(invalidPostDataS);
 
 		const postDeleted = await DBHandler.posts.deletePost("invalidPost");
