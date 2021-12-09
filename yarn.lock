@@ -404,6 +404,13 @@
     "@tinyhttp/forwarded" "2.0.2"
     ipaddr.js "^2.0.1"
 
+"@tinyhttp/rate-limit@^2.0.4":
+  version "2.0.4"
+  resolved "https://registry.yarnpkg.com/@tinyhttp/rate-limit/-/rate-limit-2.0.4.tgz#607d95c759ddf0d97ce998dff94c26cb79f632b7"
+  integrity sha512-oyFiCwgSEJ3CV04oEjo49K+umkNmhLwxyMllg1rzSAbmDeRHRr+LXEBviooaRF5i46eX1Fg7bPXkC8gUWuV7uQ==
+  dependencies:
+    "@tinyhttp/send" "2.0.3"
+
 "@tinyhttp/req@2.0.9":
   version "2.0.9"
   resolved "https://registry.yarnpkg.com/@tinyhttp/req/-/req-2.0.9.tgz#bcaf2f51347314ec1e0fc27ea01d00bac2785d6c"

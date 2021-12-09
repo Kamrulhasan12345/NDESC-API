@@ -7,6 +7,7 @@ import { users, posts } from "./initDB.js";
 import {
 	AllPostsResp,
 	EditData,
+	EditPost,
 	Post,
 	User,
 	UserExistsResp,
@@ -279,7 +280,7 @@ export default class DBHandler {
 
 		editPost: async (
 			slug: string,
-			postData: object
+			postData: EditPost
 		): Promise<Record<string, number>> => {
 			try {
 				const postExists = await (

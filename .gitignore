@@ -3,3 +3,5 @@ coverage/
 .env
 coverage.*  
 serviceAccount.json
+codacy.sh
+.codacy-coverage/
