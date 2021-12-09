@@ -16,6 +16,14 @@ export interface Post {
 	content: string;
 }
 
+export interface EditPost {
+	title?: string;
+	author?: string;
+	datetime?: string;
+	feature_img?: string;
+	content?: string;
+}
+
 export interface UserResp {
 	code: number;
 	user?: User;

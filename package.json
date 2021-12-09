@@ -7,8 +7,9 @@
 	"scripts": {
 		"start": "",
 		"dev": "node -r dotenv/config --experimental-loader ts-node/esm --experimental-specifier-resolution=node src/server.ts",
-		"test": "c8 --include=src tsm -r dotenv/config node_modules/uvu/bin.js tests/unit",
-		"test:debug": "tsm -r dotenv/config node_modules/uvu/bin.js tests/unit",
+		"test:rt": "tsm -r dotenv/config node_modules/uvu/bin.js tests/realtime",
+		"test": "c8 --include=src tsm -r dotenv/config node_modules/uvu/bin.js tests/integration",
+		"test:debug": "tsm -r dotenv/config node_modules/uvu/bin.js tests/integration",
 		"lint": "eslint . --ext .ts"
 	},
 	"repository": "https://github.com/Kamrulhasan12345/NDESC.git",
@@ -17,7 +18,7 @@
 	"private": true,
 	"dependencies": {
 		"@tinyhttp/app": "^2.0.13",
-		"@tinyhttp/dotenv": "^2.0.2",
+		"@tinyhttp/rate-limit": "^2.0.4",
 		"@tinyhttp/router": "^2.0.4",
 		"@types/bcrypt": "^5.0.0",
 		"@types/nodemailer": "^6.4.4",
@@ -27,7 +28,6 @@
 		"dotenv": "^10.0.0",
 		"firebase-admin": "^10.0.0",
 		"nodemailer": "^6.7.2",
-		"nyc": "^15.1.0",
 		"uuid": "^8.3.2"
 	},
 	"devDependencies": {
@@ -42,7 +42,6 @@
 		"ts-node": "^10.4.0",
 		"tsm": "^2.2.1",
 		"typescript": "^4.5.2",
-		"uvu": "^0.5.2",
-		"why-is-node-running": "^2.2.0"
+		"uvu": "^0.5.2"
 	}
 }

@@ -4,7 +4,6 @@ import bodyParser from "body-parser";
 import DBHandler from "../lib/DBHandler.js";
 import { handleE } from "../lib/utils.js";
 import messages from "../lib/messages.js";
-import { EditData, Post, User } from "../lib/types.js";
 
 const router = new App();
 
