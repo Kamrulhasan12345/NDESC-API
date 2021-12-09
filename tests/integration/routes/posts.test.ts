@@ -4,7 +4,7 @@ import { makeFetch } from "supertest-fetch";
 
 import { describe } from "../../helpers/describe.js";
 import router from "../../../src/routes/posts.js";
-import { db, posts } from "../../../src/lib/initDB.js";
+import { posts } from "../../../src/lib/initDB.js";
 import messages from "../../../src/lib/messages.js";
 import {
 	editedPostData,
@@ -16,7 +16,6 @@ import {
 	slug,
 } from "../../helpers/variables.js";
 import Mail from "nodemailer/lib/mailer/index.js";
-import { initJobs } from "../../../src/lib/utils.js";
 
 const fetch = makeFetch(router.listen(0));
 
